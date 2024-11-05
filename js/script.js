@@ -29,7 +29,7 @@ function gradeQuiz(){
     console.log(q1Response);
 
     //grading question 1
-    if (q1Response == "sacramento"){
+    if (q1Response === "sacramento"){
         rightAnswer(1);
     }
     else {
