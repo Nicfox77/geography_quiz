@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
         validationFdbk.innerHTML = "";
 
         // Check if all questions are answered
-        if (document.querySelector("#q1").value == "") {
+        if (document.querySelector("#q1").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 1 was not answered<br>";
         }
-        if (document.querySelector("#q2").value == "") {
+        if (document.querySelector("#q2").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 2 was not answered<br>";
         }
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             isValid = false;
             validationFdbk.innerHTML += "Question 4 was not answered<br>";
         }
-        if (document.querySelector("#q5").value == "") {
+        if (document.querySelector("#q5").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 5 was not answered<br>";
         }
@@ -67,15 +67,15 @@ document.addEventListener("DOMContentLoaded", function() {
             isValid = false;
             validationFdbk.innerHTML += "Question 6 was not answered<br>";
         }
-        if (document.querySelector("#q7").value == "") {
+        if (document.querySelector("#q7").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 7 was not answered<br>";
         }
-        if (document.querySelector("#q8").value == "") {
+        if (document.querySelector("#q8").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 8 was not answered<br>";
         }
-        if (document.querySelector("#q9").value == "") {
+        if (document.querySelector("#q9").value === "") {
             isValid = false;
             validationFdbk.innerHTML += "Question 9 was not answered<br>";
         }
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const q7Response = document.querySelector("#q7").value;
         const q8Response = document.querySelector("#q8").value;
         const q9Response = document.querySelector("#q9").value.toLowerCase();
-        const q10Response = document.querySelector("#q10").files[0];
 
         // Grading question 1
         if (q1Response === "sacramento") {
@@ -132,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Grading question 5
-        if (q5Response == "50") {
+        if (q5Response === "50") {
             rightAnswer(5);
         } else {
             wrongAnswer(5);
@@ -196,14 +195,14 @@ document.addEventListener("DOMContentLoaded", function() {
     function rightAnswer(index) {
         document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
         document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
-        document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/checkmark.png' alt='checkmark'>";
+        document.querySelector(`#markImg${index}`).innerHTML = "<img src='../img/checkmark.png' alt='checkmark'>";
         score += SCORE_INCREMENT;
     }
 
     function wrongAnswer(index) {
         document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
         document.querySelector(`#q${index}Feedback`).className = "bg-warning text-white";
-        document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' alt='xmark'>";
+        document.querySelector(`#markImg${index}`).innerHTML = "<img src='../img/xmark.png' alt='xmark'>";
     }
 
     function arraysEqual(arr1, arr2) {
