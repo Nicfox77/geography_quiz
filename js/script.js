@@ -1,9 +1,22 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
 let score = 0;
 let attempts = localStorage.getItem("totalAttempts") || 0;
+let q10SelectedAnswer = "";
 const SCORE_INCREMENT = 10; // Updated for 10 questions
 
 displayq4Choices(); // Ensure the choices are displayed on page load
+
+const q10Buttons = document.querySelectorAll("#q10Buttons button");
+q10Buttons.forEach(button => {
+    button.addEventListener("click", function() {
+        // Remove 'active' class from all buttons
+        q10Buttons.forEach(btn => btn.classList.remove("active"));
+        // Add 'active' class to the clicked button
+        this.classList.add("active");
+        // Update the selected answer
+        q10SelectedAnswer = this.textContent;
+    });
+});
 
 function displayq4Choices(){
     let q4Choices = ["Maine", "Rhode Island", "Maryland", "Delaware"];
@@ -64,7 +77,7 @@ function isFormValid(){
         isValid = false;
         validationFdbk.innerHTML += "Question 9 was not answered<br>";
     }
-    if (!document.querySelector("#q10").files.length){
+    if (q10SelectedAnswer === "") {
         isValid = false;
         validationFdbk.innerHTML += "Question 10 was not answered<br>";
     }
@@ -160,7 +173,7 @@ function gradeQuiz(){
     }
 
     // Grading question 10
-    if (q10Response){
+    if (q10SelectedAnswer === "Florida") {
         rightAnswer(10);
     } else {
         wrongAnswer(10);
@@ -200,3 +213,4 @@ function arraysEqual(arr1, arr2) {
     }
     return true;
 }
+
