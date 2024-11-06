@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>US Geography Quiz</title>
     <meta charset="utf-8">
@@ -12,11 +12,13 @@
 
 <!-- Question 1 -->
 <h3><span id="markImg1"> </span> What is the capital of California?</h3>
+<label for="q1">Capital of California:</label>
 <input id="q1" type="text" class="form-control w-50 mx-auto">
 <div id="q1Feedback" class="my-2"></div>
 
 <!-- Question 2 -->
 <h3><span id="markImg2"> </span> What is the longest river?</h3>
+<label for="q2">Select an option:</label>
 <select id="q2" class="form-select w-50 mx-auto">
     <option value="">Select One</option>
     <option value="ms">Mississippi</option>
@@ -53,6 +55,7 @@
 
 <!-- Question 5 -->
 <h3><span id="markImg5"> </span> How many states are there in the United States?</h3>
+<label for="q5">Select a number</label>
 <input id="q5" type="number" min="1" max="100" class="form-control w-50 mx-auto">
 <div id="q5Feedback" class="my-2"></div>
 
@@ -82,11 +85,13 @@
 
 <!-- Question 7 -->
 <h3><span id="markImg7"> </span> When was the Declaration of Independence signed?</h3>
+<label for="q7">Enter Date</label>
 <input id="q7" type="date" class="form-control w-50 mx-auto">
 <div id="q7Feedback" class="my-2"></div>
 
 <!-- Question 8 -->
 <h3><span id="markImg8"> </span> What is the capital of New York?</h3>
+<label for="q8">Select an option</label>
 <select id="q8" class="form-select w-50 mx-auto">
     <option value="">Select One</option>
     <option value="New York City">New York City</option>
@@ -98,6 +103,7 @@
 
 <!-- Question 9 -->
 <h3><span id="markImg9"> </span> What is the capital of Texas?</h3>
+<label for="q9">Capital of Texas:</label>
 <input id="q9" type="text" class="form-control w-50 mx-auto">
 <div id="q9Feedback" class="my-2"></div>
 
@@ -115,7 +121,10 @@
 <h3 class="bg-danger text-white" id="validationFdbk"></h3>
 
 <!-- Submit Button -->
-<button class="btn btn-primary my-4"> Submit Quiz</button>
+<button id="resetButton" class="btn btn-primary my-4"> Submit Quiz</button>
+
+<!-- Reset Button -->
+<button id="submitButton" class="btn btn-warning my-4" style="display: none" > Reset Quiz</button>
 
 <!-- Score and Attempts -->
 <h2 class="text-info" id="totalScore"></h2>

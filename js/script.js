@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    document.querySelector(".btn-primary").addEventListener("click", gradeQuiz);
+    document.querySelector("#submitButton").addEventListener("click", gradeQuiz);
+    document.querySelector("#resetButton").addEventListener("click", location.reload.bind(location));
     let score = 0;
     let attempts = localStorage.getItem("totalAttempts") || 0;
     let q10SelectedAnswer = "";
@@ -190,6 +191,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             document.querySelector("#congratsMessage").innerHTML = "";
         }
+
+        document.querySelector("#resetButton").style.display = "block";
+        document.querySelector("#submitButton").style.display = "none";
     }
 
     function rightAnswer(index) {
