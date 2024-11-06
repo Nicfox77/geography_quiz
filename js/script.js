@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    document.querySelector("#btn-primary").addEventListener("click", gradeQuiz);
+    document.querySelector(".btn-primary").addEventListener("click", gradeQuiz);
     let score = 0;
     let attempts = localStorage.getItem("totalAttempts") || 0;
     let q10SelectedAnswer = "";
